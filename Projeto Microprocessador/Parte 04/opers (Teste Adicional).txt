@@ -1,0 +1,22 @@
+(2 + 3) - (5 + 2) + 4
+
+E000 nop
+
+4402 carrega cte 2 no reg1
+4003 carrega cte 3 no reg0
+2010 A = 2 + 3 e salva A no reg0
+F000 out 5
+
+4805 carrega cte 5 no reg2
+24A0 B = 5 + 2 e salva B no reg1
+F800 out 7
+0010 A = 5 - 7 e salva A no reg0
+F000 out -2
+
+4404 carrega cte 4 no reg1
+2010 A = -2 + 4 e salva A no reg0
+
+F000 out 2
+
+4C0F li $3, -1
+FC00 out -1 (END)

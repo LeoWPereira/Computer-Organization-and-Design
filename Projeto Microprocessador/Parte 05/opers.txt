@@ -1,0 +1,22 @@
+E000      nop
+
+4005      li $a, 5
+
+0050      sub $a, $a, $1
+
+A278      bne $a, $0, -8
+
+A207      bne $a, $0, 7
+
+C008      j 8
+
+4400      li $b, 0
+
+4802      li $c, 2       -- para fazer $b <= $b + 2
+24A0      add $b, $b, $c
+
+9082      bgt $a, $b, 2  -- relativo ao if
+D002      jr 2
+4000      li $a, 0
+480F      li $c, 15 -- preparamos um FULL no $c
+F800      out $c    -- out FULL para sinalizar que o programa acabou

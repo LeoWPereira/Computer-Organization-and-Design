@@ -1,0 +1,19 @@
+-- Overflow no 15 (registradores de 4 bits)
+
+li $a, 2			-- a = 2
+li $d, 1			-- d = 1 (1: posições já verificadas)
+
+lw $c, $a, 0		-- c = [a]
+beq $c, $d, 2		-- salta 2 instruções para frente se c = 1 
+out $a				-- print a
+mov $c, $a			-- c = a 
+sw $d, $c, 0		-- [c] = 1
+mov $b, $c			-- b = c
+add $c, $c, $a		-- c = c + a 
+bgt $c, $b, -3		
+
+add $a, $a, $1		-- a = a + 1 
+beq $a, $0, 2		-- quando a = 0
+j 2			
+
+out $a	

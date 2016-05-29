@@ -1,0 +1,22 @@
+E000 nop
+
+4001 li $a, 1
+4402 li $b, 2
+4803 li $c, 3
+4C00 li $d, 0
+
+7E00 sw $d, 0($0) 
+
+6E00 lw $d, 0($0)
+2D80 add $d, $d, $a
+2D90 add $d, $d, $b
+0950 sub $c, $c, 1
+FC00 out = d
+
+7E00 sw $d, 0($0)
+AA7A bne $c, 0, -6
+
+FC00 out = d
+
+480F      li $c, 15 -- preparamos um FULL no $c
+F800      out $c    -- out FULL para sinalizar que o programa acabou

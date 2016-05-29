@@ -1,0 +1,15 @@
+E000      nop
+
+4002      li $a, 2   $a = reg 00
+4402      li $b, 2   $b = reg 01
+5800      mov $c, $a $c = reg 10
+F000      out <= $a
+
+2020      add $a, $a, $c    
+04D0      sub $b, $b, 1     
+F000      out <= $a
+
+A67D      bne $b, $0, -3
+
+480F      li $c, 15 -- preparamos um FULL no $c
+F800      out $c    -- out FULL para sinalizar que o programa acabou

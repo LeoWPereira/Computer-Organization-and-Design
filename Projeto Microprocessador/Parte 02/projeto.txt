@@ -1,0 +1,12 @@
+NOME_PROJETO = LaboratorioMicro02			
+
+SINAL_SEL_OP = OpULA
+SINAL_ENTR1 = A		
+SINAL_ENTR2 = B		
+SINAL_RESULT = Saida		
+LARGURA_ULA = 4				
+NUM_OPERACOES = 4			
+OP0 = OperacaoSUB			
+OP1 = OperacaoOR					
+OP2 = OperacaoSOMA			
+OP3 = OperacaoAND		
